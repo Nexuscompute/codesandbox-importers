@@ -11,7 +11,9 @@
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "test": "jest",
     "test:watch": "jest --watch",
-    "watch": "gulp"
+    "watch": "gulp",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "author": "",
   "license": "ISC",
@@ -77,7 +79,8 @@
     "pacote": "^2.7.31",
     "redis": "^2.7.1",
     "rimraf": "^2.6.1",
-    "shortid": "^2.2.8"
+    "shortid": "^2.2.8",
+    "@snyk/protect": "latest"
   },
   "jest": {
     "transform": {
@@ -95,5 +98,6 @@
       "<rootDir>/dist/"
     ],
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$"
-  }
+  },
+  "snyk": true
 }
